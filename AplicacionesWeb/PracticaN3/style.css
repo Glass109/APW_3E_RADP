@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+/* Importa la fuente EXo de Google Fonts */
 *{
     box-sizing: border-box;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Exo', 'Times New Roman', Times, sans-serif;
 }
 body{
     /* Doble, en caso que el navegador no soporte radial-gradient */
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    /* background: #eeaeca;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%); */
+    /* overflow: hidden; */ 
+    height: 98vh;
+    background-color: #EEAECA;
+    display: flex;
+    opacity: 1;
+    background-image:  linear-gradient(30deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(150deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(30deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(150deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(60deg, #94bbe977 25%, transparent 25.5%, transparent 75%, #94bbe977 75%, #94bbe977), linear-gradient(60deg, #94bbe977 25%, transparent 25.5%, transparent 75%, #94bbe977 75%, #94bbe977);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    
 }
 hr{
     width: 100%;
@@ -14,9 +25,14 @@ hr{
     background-color: black;
 }
 .Foto{
-    border-radius: 25px; 
-    box-shadow: 5px 5px;
+    border-radius: 16px; 
+    
     align-self: center;    
+    width: 50%;
+    flex: 0 0 auto;
+}
+.Sombra{
+    box-shadow: 5px 5px;
 }
 .Cristal{
     background: rgba(255, 255, 255, 0.52);
@@ -28,22 +44,27 @@ hr{
 }
 #Todo{
     margin: auto;
+    width: 768px;
     display: flex;
-    width: 50%;
-    height: 50%;
     gap: 10px;
+    align-self: center;
 }
 #Todo > *{
-    flex-grow: 1;
+    flex-wrap: wrap;
+    /* flex:1 1 auto; */
     padding: 10px;
 }
 #Columna1{
     display: flex;
     flex-direction: column;
+    width: 30%;
+    align-items: center;
+    margin-right: auto;
 }
 #Columna2{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: auto;
+    flex-grow: 1;
 }
 
