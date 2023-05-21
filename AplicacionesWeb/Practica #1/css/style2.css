@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    text-align: center;
+    
+    
+}
+body{
+    background-color: gray;
+}
+.Todo{
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    border: 5px solid black;
+}
+header{
+    padding: 2px;
+    height: 250px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    
+}
+nav{
+    height: 50px;
+    background-color: green;
+}
+main{
+    gap: 5px;
+    height: 400px;
+    background-color: peru;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+}
+footer{
+    height: 50px;
+    background-color: orange;
+}
+article{
+    background-color: white;
+    width: 450px;
+    height: 100%;
+}
+aside{
+    background-color: aliceblue;
+    height: 100%;
+    flex-grow: 1;
+}
+
+
+
+.Contorno{
+    border: 5px solid black;
+}
+
+.Banner{
+    width: 500px;
+    background-color: white;
+}
+.Logo{
+    background-color: white;
+    flex-grow: 1;
+}
