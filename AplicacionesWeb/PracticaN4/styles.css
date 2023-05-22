@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+.Todo{
+    display: flex;
+    flex-direction: column;
+    border: 2px dotted black;
+    background-color: darkgrey;
+    align-items: center;
+}
+.Todo > *{
+    display: flex;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+input{
+    width: 100%;
+    padding: 12px;
+    border: solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.fila{
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+}
+.peque{
+    width: 25%;
+    justify-content: end;
+}
+.grande{
+    width: 75%;
+}
