@@ -12,10 +12,6 @@ body{
     height: 98vh;
     background-color: #EEAECA;
     display: flex;
-    opacity: 1;
-    background-image:  linear-gradient(30deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(150deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(30deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(150deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(60deg, #94bbe977 25%, transparent 25.5%, transparent 75%, #94bbe977 75%, #94bbe977), linear-gradient(60deg, #94bbe977 25%, transparent 25.5%, transparent 75%, #94bbe977 75%, #94bbe977);
-    background-size: 80px 140px;
-    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     
 }
 hr{
@@ -23,6 +19,13 @@ hr{
     height: 1vh;
     color: black;
     background-color: black;
+}
+.Fondo{
+    opacity: 1;
+    background-image:  linear-gradient(30deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(150deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(30deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(150deg, #94bbe9 12%, transparent 12.5%, transparent 87%, #94bbe9 87.5%, #94bbe9), linear-gradient(60deg, #94bbe977 25%, transparent 25.5%, transparent 75%, #94bbe977 75%, #94bbe977), linear-gradient(60deg, #94bbe977 25%, transparent 25.5%, transparent 75%, #94bbe977 75%, #94bbe977);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    
 }
 .Foto{
     border-radius: 16px; 
