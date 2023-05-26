@@ -1,21 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 *{
     box-sizing: border-box;
+    font-family: 'Exo','Times New Roman', Times, sans-serif;
 }
+body{
+    height: 98vh;
+    width: 98vw;
+    display: flex;
+}
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    }
 .Todo{
     display: flex;
     flex-direction: column;
     border: 2px dotted black;
     background-color: darkgrey;
-    align-items: center;
+    align-self: center;
+    padding: 5px;
+    margin: auto;
+    
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .Todo > *{
     display: flex;
+    
 }
 label{
-    padding: 12px 12px 12px 0;
+    /* padding: 12px 12px 12px 0; */
     display: inline-block;
 }
-input{
+input, select{
     width: 100%;
     padding: 12px;
     border: solid #ccc;
@@ -25,12 +50,28 @@ input{
 .fila{
     display: flex;
     flex-direction: row;
-    width: 80vw;
+    width: 100%;
+    margin-bottom: 2px;
+    gap: 5%;
 }
 .peque{
     width: 25%;
     justify-content: end;
+    display: grid;
+    text-align: right;
+    align-items: center;
+
 }
 .grande{
     width: 75%;
+}
+.grande > *{
+    width: 100%;
+    margin: auto;
+}
+.tipoflex{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-grow: 1;
 }
