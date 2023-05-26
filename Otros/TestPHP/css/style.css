@@ -1,0 +1,81 @@
+﻿/*Puse el css en un archivo aparte como pediste, no me gusta pero nimodo*/
+/*Sinceramente no recuerdo que hacía Box-sizing, y no parece que rompa algo si lo quito, pero mejor prevenir que lamentar*/
+* {
+  box-sizing: border-box
+  
+}
+body{
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Jungle-Background-Free-Download.jpg);
+  height: 98vh;
+  width: 98vw;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+form > *{
+  /* From https://css.glass */
+  background: rgba(11, 116, 0, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.4px);
+  -webkit-backdrop-filter: blur(9.4px);
+  border: 1px solid rgba(11, 116, 0, 1);
+  color: #ddd;
+}
+/* Padding es como el margen interior que tiene el texto, si no lo pones se va hacia arriba a la izquierda por default, necesitas darle 4 atributos */
+/* Uno correspondiente a ARRIBA,DERECHA,ABAJO,IZQUIERDA. En ese orden, igual puedes optar por definirlos separados como por ejemplo "padding-top"*/
+/* "Si necesita 4 atributos, ¿Por qué solo pusiste uno?" Porque automáticamente interpreta el resto como 0*/
+.container {
+  margin: auto; 
+  
+  max-width: 80%;
+  max-height: 80%;
+  padding: 16px;
+}
+
+/* El width 100 es para que ocupe TODO el horizontal DENTRO DEL CONTAINER (pero no transpasa el padding, ojo), no de toda la pantalla, así que no se ve feo, lo demás se explica solo */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+/* Aca nomás hice que cambie la casilla de input cuando le das click, por eso el focus, no confundir con hover que se aciva cuando pasas el cursor*/
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Cambia el estilo de la raya negra a gris, y le agrega un margen abajo */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Colores y demás para el botón de registro */
+.botonregistro {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;  
+  opacity: 0.9;
+}
+/*Vuelve el botón totalmente opaco cuando pasas el cursor sobre el botón, hover*/
+.botonregistro:hover {
+  opacity:1;
+}
+
+/* Hace que los links o hipervinculos, como quieras llamarle, cambien de color*/
+a {
+  color: orangered;
+}
+
