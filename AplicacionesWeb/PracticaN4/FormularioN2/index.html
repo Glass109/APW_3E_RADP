@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo">
+        <table>
+            <tr>
+                <td><label for="nombre">Nombre:</label></td>
+                <td><input type="text" name="nombre" id="nombre"></td>
+            </tr>
+            <tr>
+                <td><label for="email"></label>Correo Electrónico</td>
+                <td><input type="text" name="email" id="email" placeholder="Escribe la URL de tu pagina"></td>
+            </tr>
+            <tr>
+                <td><label for="hipervinculo">URL</label></td>
+                <td><input type="url" name="hipervinculo" id="hipervinculo"></td>
+            </tr>
+            <tr>
+                <td><label for="fecha">Fecha</label></td>
+                <td><input type="date" name="fecha" id="fecha"></td>
+            </tr>
+            <tr>
+                <td><label for="time">Tiempo</label></td>
+                <td><input type="time" name="time" id="time"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="2date">Fecha y</label>
+                    <label for="2time">Hora</label>
+                </td>
+                <td>
+                    <input type="date" name="2date" id="2date">
+                    <input type="time" name="2time" id="2time">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="month">Mes</label></td>
+                <td><input type="month" name="month" id="month"></td>
+            </tr>
+            <tr>
+                <td><label for="week">Semana</label></td>
+                <td><input type="week" name="week" id="week"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="number">Numero</label>
+                </td>
+                <td>
+                    <input type="range" name="number" id="number" min="-10" max="10" value="0" step="1">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="phone">Telefono</label></td>
+                <td><input type="number" name="phone" id="phone"></td>
+            </tr>
+            <tr>
+                <td><label for="search">Termino de busqueda</label></td>
+                <td><input type="search" name="search" id="search"></td>
+            </tr>
+            <tr>
+                <td><label for="colour">Color favorito</label></td>
+                <td><input type="color" name="colour" id="colour" value="#ffffff"></td>
+                <td>&LeftArrow; ----- ¡Pruebame!</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+        var myColorInput = document.getElementById('colour');
+        var myColorHex = myColorInput.value;
+        document.body.style.backgroundColor = myColorHex;
+        myColorInput.addEventListener("input", function(){
+            document.body.style.backgroundColor = myColorInput.value;
+        })
+    
+</script>
+</html>
