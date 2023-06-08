@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .rojo{
+        color: red;
+    }
+    .fondoverde{
+        background-color: green;
+        color: white;
+    }
+    .list{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+</style>
+<body>
+    <p id="p1">¡Hola Mundo!</p>
+    <h1 id="titulo">Encabezado Viejo</h1>
+    <main>
+        <h1 class="rojo">TEST MAIN H1 CLASE ROJA</h1>
+        <p>TEST MAIN P</p>
+    </main>
+    <p class="fondoverde">TEST FONDOVERDE 1</p>
+    <p class="fondoverde">TEST FONDOVERDE 2</p>
+    <ul class="list">
+        <li>Lista desordenada #1</li>
+        <li>Lista desordenada #2</li>
+        <li>Lista desordenada #3</li>
+        <li>Lista desordenada #4</li>
+        <li>Lista desordenada #5</li>
+    </ul>
+</body>
+<script>
+    /*Busqueda por nombre de etiqueta*/
+    document.getElementById("p1").innerHTML="¡Nuevo Texto!";
+    document.getElementById("titulo").innerHTML="¡Encabezado nuevo!";
+    /* Busqueda por nombre de clases*/
+    const x = document.getElementsByTagName("main");
+    console.log(x);
+    const y = document.getElementsByTagName("p");
+    console.log(y);
+    /*Encontrar por nombrede clases*/
+    const z = document.getElementsByClassName("rojo");
+    console.log(z);
+    /*Busqueda de elementos HTML mediante selectores de CSS*/
+    //Devuelve solo donde TagName(p) y Class(fondoverde)
+    const a = document.querySelectorAll("p.fondoverde");
+    //Devuelve todos los HIJOS de una lista desordenada
+    const b = document.querySelectorAll("ul > li");
+    console.log(b);
+    //Imprime el primer elemento H1
+    const c = document.querySelector("h1");
+    console.log(c);
+    //Encuentra un elemento con la clase list
+    const d = document.querySelector(".list");
+    console.log(d);
+</script>
+</html>
