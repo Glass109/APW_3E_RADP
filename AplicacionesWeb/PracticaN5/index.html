@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+
+
 <style>
     .rojo{
         color: red;
@@ -17,7 +20,31 @@
     .list{
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
+    #testtext,#testtext2{
+        width: 15%;
+    }
+    #imgcontainer{
+        height: 20vh;
+        width: 20vw;
+    }
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .textoArcoiris{
+        .rainbow-text {
+        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        }
+    }
 </style>
+
+
+
+
 <body>
     <p id="p1">¡Hola Mundo!</p>
     <h1 id="titulo">Encabezado Viejo</h1>
@@ -34,7 +61,28 @@
         <li>Lista desordenada #4</li>
         <li>Lista desordenada #5</li>
     </ul>
+    <form action="#" method="get" id="form1">
+        <label for="testtext">Test Alerta si el input está vacio</label><br>
+        <input type="text" name="testtext" id="testtext" placeholder="Deja vacio para activar la Alerta">
+        <input type="submit" value="ENVIAR" id="btnSubmit">
+    </form> 
+    <form action="#" method="get" id="form2">
+        <label for="testtext2">Test X &gt; 0 && x &lt; 10]</label> <br>
+        <input type="text" name="testtext2" id="testtext2" placeholder="Inserta un numero del 1 al 10">
+        <input type="submit" value="Comprobar" id="btnSubmit2">
+    </form>
+    <label for="colourInput">Color de Fondo</label>
+    <input type="color" name="colourInput" id="colourInput" value="#ffffff"><br>
+    <div id="imgcontainer" onclick="ChangePicture()">
+        <img id="imgbarbie" src="https://i.kym-cdn.com/entries/icons/original/000/045/147/Barbi_And_Ken_Mugshots.jpg" alt="">
+    </div>
+    <p class="textoArcoiris">Click en la imagen para CAMBIAR</p>
+    <h2 id="timelabel">HORA ACTUAL:</h2>
 </body>
+
+
+
+<!-- AQUÍ COMIENZA EL JAVASCRIPT -->
 <script>
     /*Busqueda por nombre de etiqueta*/
     document.getElementById("p1").innerHTML="¡Nuevo Texto!";
@@ -59,5 +107,113 @@
     //Encuentra un elemento con la clase list
     const d = document.querySelector(".list");
     console.log(d);
+
+    //Iterar los elementos <li> usando el ciclo ForEach()
+        console.log("INICIO FOREACH");
+    const listaDeElementos = document.querySelectorAll("ul > li");
+        listaDeElementos.forEach((item) => {
+            console.log(item);
+            
+        });
+        console.log("FINAL FOREACH");
+
+        //CAMBIAR ESTILOS DE CSS CON JS
+        const h1 = document.querySelector("h1");
+        h1.style.color = "purple";
+
+        //Busqueda por colecciones de objetos HTML, NO FUCNIONA
+        /*
+        const e = document.forms["form1"];
+        let texto = " ";
+        for(let i = 0; i < e.lenght; i++){
+            texto += x. e.elements[i].value + "<br>";
+        }
+        document.getElementById("demo").innerHTML = texto;
+        console.log(e);
+        */
+
+        //Agregar nuevos elementos HTML.
+        let lista = document.createElement("ul");
+        document.body.appendChild(lista);
+
+        let elemento1 = document.createElement("li");
+        elemento1.textContent="Flor";
+        lista.appendChild(elemento1);
+        
+        let elemento2 = document.createElement("li");
+        elemento2.textContent="Jaguar";
+        lista.appendChild(elemento2);
+
+        //Escuchar eventos en la pagina
+        var colourInput = document.getElementById('colourInput');
+        document.body.style.backgroundColor = colourInput.value;
+        colourInput.addEventListener("input",function(){
+            document.body.style.backgroundColor = colourInput.value;
+        });
+
+        //Validación input vacio
+        let botonSubmit = document.getElementById('btnSubmit');
+        botonSubmit.addEventListener("click", () =>{
+            let x = document.forms["form1"]["testtext"].value;
+            if(x === ""){
+                alert("Se debe completar el nombre");
+                return false;
+            }
+        });
+
+        //Validación numero
+        let botonSubmit2 = document.getElementById('btnSubmit2');
+        botonSubmit2.addEventListener("click", () =>{
+            let x = document.forms["form2"]["testtext2"].value
+            if (isNaN(x) || x < 1 || x > 10){
+                alert("Entrada no valida");
+                return false;
+            }else{
+                alert("Correcto");
+                return false
+            }
+            return false;
+        })
+        //Cambiar imagen
+        function ChangePicture(x){
+            document.getElementById('imgbarbie').src = linksBarbie[Math.floor(Math.random()*linksBarbie.length)];
+            console.log(document.getElementById('imgbarbie').src);
+        }
+        //Poner fecha actual
+        document.getElementById("timelabel").innerHTML = "Hora actual: " + Date();
+
+        const linksBarbie = [
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/601/946/aa5.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/601/829/040.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/600/033/ea0.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/599/648/644.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/600/034/5a3.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/600/005/85c.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/599/649/949",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/600/035/15f.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/598/970/ec8.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/598/969/4b1.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/598/613/649",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/598/407/448.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/598/409/330.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/991/5ff.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/598/312/67a.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/832/978.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/241/7fb.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/644/82c.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/173/f7e.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/196/9c8.jpeg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/170/3a6.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/240/f2c.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/384/bcc.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/596/698/48a.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/008/3e5",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/596/897/44f.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/597/194/983.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/596/701/d08.png",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/596/857/b71.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/002/596/226/e47.jpg"
+        ]
+
 </script>
 </html>
