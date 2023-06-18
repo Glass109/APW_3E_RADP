@@ -4,7 +4,7 @@
   "description": "Repositorio de Tareas Raúl Dondé",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "purgecss --css AplicacionesWeb/PracticaN6/scss/style.css --content AplicacionesWeb/scss/index.html --output AplicacionesWeb/PracticaN6/scss/reducido.css"
   },
   "repository": {
     "type": "git",
