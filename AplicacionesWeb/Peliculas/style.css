@@ -6,7 +6,7 @@
 }
 body{
     height: 100vh;
-    background: linear-gradient(#000000 50%, #ffb92a 50%);
+    background: linear-gradient(#000000 50%, #ff00ff 50%);
 }
 .container{
     font-size: 16px;
@@ -43,7 +43,7 @@ body{
     border-color: white;
 }
 .search-container button{
-    background-color: #ffb92a;
+    background-color: #ff00ff;
     border: none;
     cursor: pointer;
 }
