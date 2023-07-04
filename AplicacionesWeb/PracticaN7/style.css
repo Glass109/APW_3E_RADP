@@ -1,0 +1,72 @@
+body{
+    margin: 0 50px;
+}
+.container{
+    display: flex;
+    gap:50px;
+}
+#post{
+    width: 400px;
+}
+
+#post div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.options{
+    display: flex;
+    gap: 25px;
+}
+
+i{
+    cursor: pointer;
+}
+
+#msg{
+    color: red;
+}
+.boton1{
+    border-radius: 8px;
+    background: linear-gradient(150deg, #1E7FB6 0%, #97F6EB 100%);
+    box-shadow: 0px 4px 4px 0px #1E7FB6, 0px 4px 4px 0px #97F6EB;
+}
+.boton2{
+    text-align: center;
+    border-radius: 8px;    
+}
+.recuadro
+{
+width: 90%;
+height: 90%;
+margin: auto;
+padding: 5%;
+}
+.recuadro > *{
+    color: greenyellow;
+}
+.cristal{
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.79);
+    box-shadow: 6px 6px rgba(255, 0, 255, .5);
+}
+#fondo{
+    background-color: #e5e5f7;
+    opacity: .9;
+    background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 17.5px 17.5px, linear-gradient(#7d5b9c 1.4000000000000001px, transparent 1.4000000000000001px) 0 -0.7000000000000001px, linear-gradient(90deg, #7d5b9c 1.4000000000000001px, #e5e5f7 1.4000000000000001px) -0.7000000000000001px 0;
+    background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
+}
+.comentario{
+    width: 100%;
+    height: auto;
+}
+.comentario > *{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
