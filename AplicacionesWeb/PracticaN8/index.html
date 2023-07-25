@@ -1,14 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="custom.css">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>South Park!</title>
 </head>
-<body>
-    <div class="verticalcontainer cristal">
-        <p>Hola</p>
-    </div>
+<body style="background-image: url(https://vignette2.wikia.nocookie.net/southpark/images/c/ca/Bus-stop.jpg); background-size: cover;">
+    <section>
+        <div class="container col-6 border rounded bg-success text-white align mt-2 p-3">
+            <div class="column">
+                <label for="" class="form-label">Busqueda</label>
+                <div class="d-flex row">
+                    <input type="text" class="form-control" name="" id="textrequest" aria-describedby="helpId" placeholder="Eric, Kyle, Butters, Jerome, Randy....">
+                    <button type="submit" class="btn btn-danger gosearch" id="">Buscar!</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="container col-6 border rounded bg-success text-white align mt-2 p-3">
+            <div class="blockquote">
+                <samp id="response-code"></samp>
+            </div>
+        </div> -->
+        <div class="container-fluid d-flex flex-wrap" id="cardcontainer">
+
+        <!-- AQUI VAN LAS CARDS -->
+
+        </div>
+    </section>
 </body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+	var datos;
+    $(document).ready(function(){
+        $('.gosearch').click(function(){
+        processGet($("#textrequest").val());
+    })
+    const processGet = (endpoint) => {
+                axios.get('https://spapi.dev/api/characters?search=' + endpoint)
+                .then((data) => {
+                    // $('#response-code').text(JSON.stringify(data.data, null, 2));
+					datos = data['data']['data'][0];
+                    console.log(datos);
+                    const cardTemplate = '<div class="card"><div class="card-body"><h4 class="card-title">'+datos.name+'</h4><p class="card-text">Age: '+datos.age+'</p><p class="card-text">Sex: '+datos.sex+'</p><p class="card-text">Occupation: '+datos.occupation+'</p><p class="card-text">Religion: '+datos.religion+'</p></div>';
+                    $('#cardcontainer').append(cardTemplate);
+                })
+                .catch((err) => {
+                    console.log("ERRORRRRRRRRR");
+                })
+            }
+    const addCard = (character) => {
+
+    }
+    })
+    
+
+</script>
 </html>
